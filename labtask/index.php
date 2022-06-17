@@ -1,19 +1,21 @@
 <?php
 $isPost=false;
-$Name=$email=$pnumber=$passwrd=$address=$dob="";
-$city="City";
-$gender="Gender";
-if(isset($_POST["sellerbtn"])||isset($_POST["buyerbtn"]))
+$Name=$email=$number=$passwrd=$address=$dob="";
+$city="city";
+$gender="gender";
+if(isset($_POST["submit"]))
 {
 $isPost=true;
 if($_POST["name"]!="")
-$firstName=$_POST["name"];
+$Name=$_POST["name"];
 if($_POST["email"]!="")
-$pnumber=$_POST["email"];
+$email=$_POST["email"];
+if($_POST["number"]!="")
+$number=$_POST["number"];
 if($_POST["passwrd"]!="")
 $passwrd=$_POST["passwrd"];
 if($_POST["city"]!="")
-$dstrct=$_POST["city"];
+$city=$_POST["city"];
 if($_POST["address"]!="")
 $address=$_POST["address"];
 if($_POST["gender"]!="")
@@ -64,9 +66,9 @@ echo "<span style='color:red;font-size:13px;text-align:left;'>Required</span>";
 <br>
 
 
-<input type="number" id="pnumber" name="pnumber" placeholder="Phone Number">
+<input type="number" id="number" name="number" placeholder="Phone Number">
 <?php
-if($isPost==true && $pnumber=="")
+if($isPost==true && $number=="")
 echo "<span style='color:red;font-size:13px;text-align:left;'>Required</span>";
 ?>
 
@@ -95,7 +97,7 @@ echo "<span style='color:red;font-size:13px;text-align:left;'>Required</span>";
 
 
 <select name="city">
-<option value="City">City</option>
+<option value="city">city</option>
 <option value="Rangpur">Rangpur</option>
 <option value="Barisal">Barisal</option>
 <option value="Chittagong">Chittagong</option>
@@ -105,14 +107,14 @@ echo "<span style='color:red;font-size:13px;text-align:left;'>Required</span>";
 </select>
 
 <?php
-if($isPost==true && $dstrct=="city")
+if($isPost==true && $city=="city")
 echo "<span style='color:red;font-size:13px;text-align:left;'>Required</span>";
 ?>
 
 <br>
 <br>
 <select name="gender">
-<option value="Select Gender">Gender</option>
+<option value="Select gender">gender</option>
 <option value="Male">Male</option>
 <option value="Female">Female</option>
 <option value="Otherss">Others</option>
